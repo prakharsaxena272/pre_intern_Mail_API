@@ -9,12 +9,11 @@ var express     = require("express"),
     Message     = require("./models/message"),
     User        = require("./models/user"),
     session = require("express-session"),
-   // seedDB      = require("./seeds"),
+   
     methodOverride = require("method-override");
     
 //requiring routes
-// var commentRoutes    = require("./routes/comments"),
-//     campgroundRoutes = require("./routes/campgrounds"),
+
 var indexRoutes      = require("./routes/index");
     
 mongoose.connect("mongodb://localhost/cashpositive");
@@ -24,7 +23,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 app.use(cookieParser('secret'));
 
-// seedDB(); //seed the database
+
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -49,8 +48,7 @@ app.use(function(req, res, next){
 
 
 app.use("/", indexRoutes);
-// app.use("/campgrounds", campgroundRoutes);
-// app.use("/campgrounds/:id/comments", commentRoutes);
+
 
 app.listen(2611, function(){
    console.log("Startted");
