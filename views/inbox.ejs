@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+                <hr>
+                <% user.message.forEach(function(message){ %>
+                  <br>
+                  <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" style="border : 3px solid red; ">
+                            <strong>From : <%= message.from.username %></strong>
+                          \
+                           <div>
+                           Subject : <%= message.subject %> 
+
+                            
+                       </div><br>
+                       <div>
+                           <%= message.text %> 
+
+                            
+                       </div>
+                        </div>
+                    </div>
+                    </div>
+                <% }) %>
+            
+</html>
